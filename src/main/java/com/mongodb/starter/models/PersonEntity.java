@@ -1,11 +1,19 @@
 package com.mongodb.starter.models;
 
 import org.bson.types.ObjectId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
 
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PersonEntity {
 
     private ObjectId id;
@@ -16,100 +24,7 @@ public class PersonEntity {
     private Date createdAt = new Date();
     private Boolean insurance;
     private List<CarEntity> carEntities;
-
-    public PersonEntity() {
-    }
-
-    public PersonEntity(ObjectId id,
-                        String firstName,
-                        String lastName,
-                        int age,
-                        AddressEntity addressEntity,
-                        Date createdAt,
-                        Boolean insurance,
-                        List<CarEntity> carEntities) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.addressEntity = addressEntity;
-        this.createdAt = createdAt;
-        this.insurance = insurance;
-        this.carEntities = carEntities;
-    }
-
-    public ObjectId getId() {
-        return id;
-    }
-
-    public PersonEntity setId(ObjectId id) {
-        this.id = id;
-        return this;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public PersonEntity setFirstName(String firstName) {
-        this.firstName = firstName;
-        return this;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public PersonEntity setLastName(String lastName) {
-        this.lastName = lastName;
-        return this;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public PersonEntity setAge(int age) {
-        this.age = age;
-        return this;
-    }
-
-    public AddressEntity getAddress() {
-        return addressEntity;
-    }
-
-    public PersonEntity setAddress(AddressEntity addressEntity) {
-        this.addressEntity = addressEntity;
-        return this;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public PersonEntity setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public Boolean getInsurance() {
-        return insurance;
-    }
-
-    public PersonEntity setInsurance(Boolean insurance) {
-        this.insurance = insurance;
-        return this;
-    }
-
-    public List<CarEntity> getCars() {
-        return carEntities;
-    }
-
-    public PersonEntity setCars(List<CarEntity> carEntities) {
-        this.carEntities = carEntities;
-        return this;
-    }
-
+    
     @Override
     public String toString() {
         return "Person{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", age=" + age + ", address=" + addressEntity + ", createdAt=" + createdAt + ", insurance=" + insurance + ", cars=" + carEntities + '}';
