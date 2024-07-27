@@ -1,47 +1,18 @@
 package com.mongodb.starter.models;
 
 import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CarEntity {
     private String brand;
     private String model;
     private Float maxSpeedKmH;
-
-    public CarEntity() {
-    }
-
-    public CarEntity(String brand, String model, Float maxSpeedKmH) {
-        this.brand = brand;
-        this.model = model;
-        this.maxSpeedKmH = maxSpeedKmH;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public CarEntity setBrand(String brand) {
-        this.brand = brand;
-        return this;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public CarEntity setModel(String model) {
-        this.model = model;
-        return this;
-    }
-
-    public Float getMaxSpeedKmH() {
-        return maxSpeedKmH;
-    }
-
-    public CarEntity setMaxSpeedKmH(Float maxSpeedKmH) {
-        this.maxSpeedKmH = maxSpeedKmH;
-        return this;
-    }
 
     @Override
     public String toString() {
